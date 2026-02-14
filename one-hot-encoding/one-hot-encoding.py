@@ -6,9 +6,7 @@ def one_hot(y, num_classes=None):
     """
     if num_classes is None:
       num_classes = np.max(y) + 1
-    output = np.zeros((len(y),num_classes),np.int32)
-    for i in range(len(y)):
-      output[i][y[i]] = 1
+
     # Write code here
-    return output
+    return  np.eye(num_classes, dtype=np.int32)[y]
     pass
